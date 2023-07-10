@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="text-align: center">
+    {% include 'navbar.html' %}
+    
+    <form action="/index/" method="POST">
+      <input type="text" name="name"/>
+      {% csrf_token %}
+      <button>send</button>
+    </form>
+
+    {% if isactive %}
+    <div style="text-align: center">
+      <h1>This is the home page</h1>
+
+      <hr />
+      <h1>My Name {{value}}</h1>
+    </div>
+    {% endif %}
+  </body>
+</html>
